@@ -1,4 +1,12 @@
 FROM jenkins/jenkins:lts
+LABEL maintainer="info@sebastianboegl.de"
+
+# Labels.
+LABEL org.label-schema.schema-version="1.0"
+LABEL org.label-schema.name="theboegl/jenkins-javafx-xvfb"
+LABEL org.label-schema.description="Official jenkins LTS version with JavaFX and xvfb"
+LABEL org.label-schema.vcs-url="https://github.com/TheBoegl/jenkins-javafx-xvfb"
+
 
 # Switching from jenkins to root user...
 USER root
