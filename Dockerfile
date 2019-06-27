@@ -22,7 +22,10 @@ RUN mkdir /var/lib/apt/lists/partial \
            openjfx \
            libopenjfx-java \
            libopenjfx-jni \
-        && rm -rf /var/lib/apt/lists/*
+        && rm -rf /var/lib/apt/lists/* \
+        && ln -s /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar /usr/local/openjdk-8/jre/lib/ext/jfxrt.jar \
+        && chmod 0644 /usr/local/openjdk-8/jre/lib/ext/jfxrt.jar \
+        && chown root:staff -h /usr/local/openjdk-8/jre/lib/ext/jfxrt.jar
 
 # Switching back from root to jenkins user for any further RUN/CMD/ENTRYPOINT...
 USER jenkins
