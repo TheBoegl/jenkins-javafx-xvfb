@@ -16,7 +16,7 @@ ARG OPENJFX_VERSION=8u141*
 # Installing openjfx to build javafx programs...
 RUN mkdir /var/lib/apt/lists/partial \
         && apt-get update && apt-get install -y --no-install-recommends \
-           xvfb libgfortran3 libgfortran-5-dev \
+           xvfb libgfortran3 \
            openjfx=$OPENJFX_VERSION \
            libopenjfx-java=$OPENJFX_VERSION \
            libopenjfx-jni=$OPENJFX_VERSION \
